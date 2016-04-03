@@ -12,8 +12,16 @@ source 'https://rubygems.org'
  # #2
  group :development do
    gem 'sqlite3'
-   gem 'rspec-rails', '~> 3.0'
  end
+
+ group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
+   gem 'faker'
+   gem 'shoulda'
+   gem 'byebug'
+   gem 'factory_girl_rails'
+   gem 'spring'
+
 
  # Use SCSS for stylesheets
  gem 'sass-rails', '~> 5.0'
@@ -29,3 +37,8 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
  # Devise
  gem 'devise'
+ # Figaro
+ gem 'figaro', '1.0'
+ # Pry
+ gem 'pry'
+end 
