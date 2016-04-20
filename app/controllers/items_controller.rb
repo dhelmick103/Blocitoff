@@ -3,9 +3,25 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = current_user.items.create(item_params)
-    @user = User.find(params[:user_id])
-    redirect_to user_path
+    @item = current_user.items.build(item_params)
+
+    if @item.save
+      flash[:notice] = "Item saved"
+    else
+      flash[:error] = "Something went wrong. Please try again"
+    end
+    redirect_to current_user
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+
+    if item.destroy
+      flash[:notice] = "Item saved"
+    else
+      flash[:error] = "Something went wrong. Please try again"
+    end
+    redirect_to current_user
   end
 
   private
