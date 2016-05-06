@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'welcome/about' => 'welcome#about'
 
-  root 'users#show'
+  root 'welcome#index'
 
   #
 

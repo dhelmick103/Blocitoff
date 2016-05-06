@@ -2,10 +2,12 @@ require 'faker'
 
 #CreateUsers
 15.times do
-  user = User.create!(
+  user = User.new(
     email:      Faker::Internet.email,
     password:   Faker::Lorem.characters(8)
     )
+    user.skip_confirmation!
+    user.save!
 end
 
 users = User.all

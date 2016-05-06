@@ -1,5 +1,15 @@
 class ItemsController < ApplicationController
+
+  # respond_to do |format|
+  #   format.html
+  #   format.js
+  # end
+
   def index
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   def create
