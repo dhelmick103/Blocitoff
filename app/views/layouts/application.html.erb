@@ -22,7 +22,8 @@
         <% end %>
       </div>
     </ul>
-
+    <%= flash[:error] %>
+    <%= flash[:notice] %>
     <%= yield %>
   </div>
 
