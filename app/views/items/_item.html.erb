@@ -1,2 +1,3 @@
 <%= item.name %><br/>
 <%= link_to "delete" , [current_user, item], method: :delete %>
+Approximately <%= distance_of_time_in_words(item.created_at, item.created_at - 7.days) %> until deletion<br/>
